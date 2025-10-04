@@ -1,0 +1,80 @@
+/* Nút QR */
+.qr-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #ffcf61, #ff8a61);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+.qr-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.4);
+}
+
+/* Popup nền mờ */
+.qr-popup {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+  z-index: 100;
+  padding: 15px;
+}
+
+/* Nội dung popup */
+.qr-popup-content {
+  background: #1a1a1a;
+  padding: 20px 25px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  max-width: 90%;
+  text-align: center;
+}
+
+/* QR code */
+.qr-popup-content div {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 12px;
+}
+
+/* Link web */
+.qr-popup-content p {
+  color: #fff;
+  font-size: 14px;
+  margin: 5px 0;
+  word-break: break-word; /* Wrap link dài */
+  max-width: 220px;
+}
+
+/* Nút copy */
+.qr-popup-content button.copy-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffcf61, #ff8a61);
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+}
+.qr-popup-content button.copy-btn:hover {
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
