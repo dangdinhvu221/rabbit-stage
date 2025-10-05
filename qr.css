@@ -1,80 +1,118 @@
 /* Nút QR */
 .qr-btn {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px 16px;
-  background: linear-gradient(135deg, #ffcf61, #ff8a61);
-  border: none;
-  border-radius: 12px;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 22px; /* Tăng kích thước nút */
+    /* Gradient vàng cam tinh tế, như trong ảnh */
+    background: linear-gradient(135deg, #fbc02d, #f57f17); /* Tông vàng đất/cam ấm */
+    border: none;
+    border-radius: 18px; /* Bo góc mềm mại hơn */
+    color: #333; /* Màu chữ đen đậm hơn cho độ tương phản tốt */
+    font-size: 16px; /* Kích thước chữ lớn hơn */
+    font-weight: 700; /* Chữ đậm hơn */
+    cursor: pointer;
+    /* Đổ bóng tinh tế */
+    box-shadow: 0 5px 15px rgba(245, 127, 23, 0.4); 
+    transition: all 0.3s ease-in-out; /* Chuyển động mượt mà hơn */
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
 }
+
 .qr-btn:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.4);
+    transform: translateY(-3px) scale(1.03); /* Nhấn nhá nhẹ khi hover */
+    box-shadow: 0 8px 20px rgba(245, 127, 23, 0.6); /* Đổ bóng mạnh hơn */
 }
 
 /* Popup nền mờ */
 .qr-popup {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0,0,0,0.6);
-  z-index: 100;
-  padding: 15px;
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7); /* Nền tối mờ nhẹ */
+    z-index: 1000; /* Đảm bảo popup nằm trên mọi thứ */
+    padding: 20px;
+    backdrop-filter: blur(5px); /* Hiệu ứng làm mờ nền mạnh hơn */
+    -webkit-backdrop-filter: blur(5px); /* Hỗ trợ Safari */
 }
 
 /* Nội dung popup */
 .qr-popup-content {
-  background: #1a1a1a;
-  padding: 20px 25px;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  max-width: 90%;
-  text-align: center;
+    background: #f792e1; /* Nền tối cho nội dung popup */
+    padding: 35px; /* Padding lớn hơn */
+    border-radius: 25px; /* Bo góc rất tròn */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Đổ bóng sâu, nổi khối */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6); 
+    max-width: 320px; /* Chiều rộng tối đa */
+    text-align: center;
+    border: 1px solid rgba(251, 192, 45, 0.2); /* Viền mỏng màu vàng nhạt */
+    transform: scale(0.95); /* Khởi đầu hơi nhỏ */
+    opacity: 0; /* Ẩn đi */
+    animation: fadeInScale 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1); /* Animation hiện ra */
 }
 
-/* QR code */
+/* Keyframe cho animation popup */
+@keyframes fadeInScale {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* QR code container */
 .qr-popup-content div {
-  width: 200px;
-  height: 200px;
-  margin-bottom: 12px;
+    width: 200px; /* Kích thước QR code */
+    height: 200px;
+    margin-bottom: 25px;
+    background-color: white; /* Đảm bảo nền QR là màu trắng */
+    border: 6px solid #fbc02d; /* Viền vàng nổi bật như trong ảnh */
+    border-radius: 15px; /* Bo góc cho container QR */
+    overflow: hidden; /* Đảm bảo QR code không tràn ra ngoài viền */
+    display: flex; /* Dùng flex để căn giữa nếu QR code nhỏ hơn container */
+    justify-content: center;
+    align-items: center;
+    /* Đổ bóng cho chính QR code container */
+    box-shadow: 0 4px 15px rgba(216, 213, 7, 0.951); 
 }
 
 /* Link web */
 .qr-popup-content p {
-  color: #fff;
-  font-size: 14px;
-  margin: 5px 0;
-  word-break: break-word; /* Wrap link dài */
-  max-width: 220px;
+    color: #e0e0e0; /* Màu chữ xám nhạt */
+    font-size: 15px;
+    margin: 10px 0;
+    word-break: break-word;
+    max-width: 280px;
+    line-height: 1.5;
 }
 
 /* Nút copy */
 .qr-popup-content button.copy-btn {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #ffcf61, #ff8a61);
-  color: #fff;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 600;
-  margin-top: 8px;
-  transition: all 0.3s ease;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 18px; /* Bo góc giống nút QR chính */
+    /* Gradient tương tự nút QR chính */
+    background: linear-gradient(135deg, #fbc02d, #f57f17); 
+    color: #333; /* Màu chữ đen đậm */
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 3px 10px rgba(245, 127, 23, 0.3); 
 }
+
 .qr-popup-content button.copy-btn:hover {
-  transform: translateY(-1px) scale(1.05);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 15px rgba(245, 127, 23, 0.5);
 }

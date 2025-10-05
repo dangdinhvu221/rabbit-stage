@@ -1,9 +1,9 @@
 const letters = [
-  "Chúc em một mùa Trung Thu thật vui vẻ và ý nghĩa!",
-  "Trung Thu này, mong nụ cười luôn rạng rỡ trên môi em!",
-  "Chúc em luôn hạnh phúc và tràn đầy yêu thương!",
-  "Một mùa trăng tròn an lành, bình yên bên gia đình!",
-  "Gửi đến em những lời chúc ngọt ngào và ấm áp nhất!"
+  "Chúc Trang có một mùa Trung Thu thật ngọt ngào, tràn đầy yêu thương và hạnh phúc nhé!",
+  "Trung Thu này, mong nụ cười của Trang luôn tỏa sáng như ánh trăng rằm!",
+  "Gửi đến Trang muôn vàn yêu thương, mong mọi điều tốt đẹp nhất luôn bên cạnh em!",
+  "Chúc Trang một mùa trăng tròn bình yên, ấm áp và đầy ắp những khoảnh khắc đáng nhớ!",
+  "Dù ở đâu, mong Trang luôn cảm nhận được tình yêu thương chân thành gửi đến em trong đêm trăng này!"
 ];
 
 // Tạo thư rơi tự động
