@@ -1,41 +1,52 @@
 <!doctype html>
 <html lang="vi">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tặng Trang iuu ơi  ❤️ 💝</title>
+  <title>Tặng Trang iuu ơi ❤️ 💝</title>
+
+  <!-- 🩷 CSS -->
+  <link rel="stylesheet" href="video_style.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="qr.css">
   <link rel="stylesheet" href="letters.css">
-  <!-- Favicon emoji 🐰 -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐰</text></svg>">
 
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐰</text></svg>">
 </head>
+
 <body>
+  <!-- 🦋 Canvas hiệu ứng bướm -->
+  <canvas id="butterflyCanvas"></canvas>
+
   <div class="container">
     <section class="stage">
-      <video class="stage-bg" preload="none"
+      <!-- 🌸 Video nền -->
+      <video class="stage-bg" preload="none" 
         src="https://pic.pikbest.com/18/42/37/89c888piCXTK.mp4"
         poster="https://pic.pikbest.com/best/video_preview_img/2011/5527862.jpg!fwc238"
         autoplay muted loop playsinline webkit-playsinline>
       </video>
     </section>
-
-    <!-- Nút tạo QR code -->
   </div>
 
-  <input type="file" id="uploadInput" accept="image/*" style="display:none">
+  <!-- 💖 Popup hiển thị video -->
+  <div id="momentOverlay" class="hidden">
+    <div id="momentContainer">
+      <video id="momentVideo" controls autoplay></video>
+    </div>
+  </div>
 
-  <!-- Thư viện QR code -->
+  <!-- 📜 Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 
-  <!-- JS xử lý thỏ và upload -->
+  <!-- 🐰 Đặt rabbits.js trước các script khác để tách luồng -->
   <script src="rabbits.js"></script>
 
-  <!-- JS xử lý lyric + nhạc -->
+  <!-- 🎵, 💌, 🦋 -->
   <script src="lyrics.js"></script>
-
-    <!-- JS thư Trung Thu -->
   <script src="letters.js"></script>
+  <script src="moments.js"></script>
 </body>
 </html>

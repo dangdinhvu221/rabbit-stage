@@ -1,0 +1,72 @@
+/* =============================
+   🦋 Hiệu ứng bướm bay
+   ============================= */
+#butterflyCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1  ;
+  pointer-events: auto;
+  background: transparent;
+  transition: opacity 1.2s ease;
+}
+
+/* =============================
+   💖 Overlay hiển thị video
+   ============================= */
+#momentOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s ease;
+}
+
+#momentOverlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =============================
+   🎬 Video nhỏ xinh ở giữa
+   ============================= */
+#momentContainer {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 0 25px rgba(64, 6, 173, 0.7);
+  transform: scale(0.85);
+  transition: all 0.5s ease;
+  animation: popIn 0.6s ease forwards;
+}
+
+#momentContainer video {
+  width: 280px;
+  max-width: 90vw;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(193, 4, 124, 0.5);
+}
+
+/* Hiệu ứng popup nảy vào */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hidden {
+  display: none;
+}
