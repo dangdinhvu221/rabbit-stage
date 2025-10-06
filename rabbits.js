@@ -21,6 +21,17 @@ const placeholderImages = [
   'images/tho6.gif'
 ];
 
+// Lời mật ngọt 💖
+// 🌷 Lời thương gửi em 💖
+const sweetMessages = [
+  "Gặp được em là điều may mắn nhất trong cuộc đời anh 🍀",
+  "Chỉ cần nghĩ đến em, mọi mệt mỏi trong anh đều tan biến 🌤️",
+  "Anh không hứa nhiều, chỉ hứa luôn bên em những lúc em cần 🤝",
+  "Nụ cười của em là lý do để anh cố gắng mỗi ngày 🌼",
+  "Anh muốn cùng em đi qua những ngày bình thường, mà vẫn thấy hạnh phúc 💞",
+  "Không cần điều gì quá lớn lao, chỉ cần có em – là đủ rồi 🌙"
+];
+
 function randomPosition(stage, w=80, h=80){
   const rect = stage.getBoundingClientRect();
   let pos, safe=false, attempts=0;
@@ -54,8 +65,9 @@ function createRabbit(index){
   rabbit.style.cursor = 'pointer';
 
   rabbit.addEventListener("click", ()=>{
-    // Click lần đầu: hiển thị ảnh thật
-    showImagePopup(rabbitImages[index]);
+    // Hiển thị ảnh thật + lời mật ngọt
+    const message = sweetMessages[Math.floor(Math.random()*sweetMessages.length)];
+    showImagePopup(rabbitImages[index], message);
   });
 
   // Drag thỏ
@@ -82,7 +94,7 @@ function createRabbit(index){
   stage.appendChild(rabbit);
 }
 
-function showImagePopup(url){
+function showImagePopup(url, message){
   const stage = document.querySelector(".stage");
   const old = stage.querySelector(".image-popup");
   if(old) old.remove();
@@ -94,11 +106,24 @@ function showImagePopup(url){
   popup.style.width = "100%";
   popup.style.height = "100%";
   popup.style.display = "flex";
+  popup.style.flexDirection = "column";
   popup.style.alignItems = "center";
   popup.style.justifyContent = "center";
   popup.style.background = "rgba(0,0,0,0.45)";
   popup.style.borderRadius = "12px";
-  popup.innerHTML = `<img src="${url}" alt="ảnh" style="max-width:350px; max-height:350px; border-radius:12px;">`;
+
+  popup.innerHTML = `
+    <img src="${url}" alt="ảnh" style="max-width:350px; max-height:350px; border-radius:12px;">
+    <div style="
+      color: #fff;
+      font-size: 20px;
+      margin-top: 15px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      text-align: center;
+      font-family: 'Segoe Script', cursive;
+    ">${message}</div>
+  `;
+
   popup.addEventListener("click", e=>{ if(e.target===popup) popup.remove(); });
   stage.appendChild(popup);
 }
