@@ -1,4 +1,4 @@
-const audio = new Audio("https://a128-z3.zmdcdn.me/51c84e08f6f1d6e32200c087d939694d?authen=exp=1759691241~acl=/51c84e08f6f1d6e32200c087d939694d*~hmac=f724d62ae503c2e712c296554240bb3d");
+const audio = new Audio("https://a128-z3.zmdcdn.me/51c84e08f6f1d6e32200c087d939694d?authen=exp=1759691241~acl=/https://a128-z3.zmdcdn.me/51c84e08f6f1d6e32200c087d939694d?authen=exp=1759889822~acl=/51c84e08f6f1d6e32200c087d939694d*~hmac=484473d8142420f4d1dbb82d31051ba6*~hmac=f724d62ae503c2e712c296554240bb3d");
 const STOP_TIME = 103;
 
 audio.play().catch(() => {
