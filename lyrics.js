@@ -1,4 +1,4 @@
-const audio = new Audio("https://vnno-ne-2-tf-a128-z3.zmdcdn.me/51c84e08f6f1d6e32200c087d939694d?authen=exp=1759889822~acl=/51c84e08f6f1d6e32200c087d939694d*~hmac=484473d8142420f4d1dbb82d31051ba6");
+const audio = new Audio("audios/nang-tho.mp3");
 const STOP_TIME = 103;
 
 audio.play().catch(() => {
